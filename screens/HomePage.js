@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
     View,
     Text,
@@ -10,18 +10,49 @@ import {
 } from "react-native";
 import {useNavigation} from "@react-navigation/native";
 import {useTheme} from "../components/ThemeContext";
-import championsData from "../Champs.json";
+import {getData} from "../components/GetApi"; // jouw API
 
 export default function HomePage() {
     const navigation = useNavigation();
     const {isFavorite} = useTheme();
 
-    const champions = championsData;
-    const favoriteChamps = champions.filter((champ) => isFavorite(champ.name));
-    const categories = ["All", "Assassins", "Mages", "Fighters", "Bruisers"];
+    const [champions, setChampions] = useState([]);
+    const [search, setSearch] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("All");
+
+    const categories = ["All", "Assassins", "Mages", "Fighter", "Bruisers"];
+
+    // 🔥 API CALL — haalt champions online op
+    useEffect(() => {
+        async function loadChampions() {
+            const data = await getData();
+            setChampions(data); // moet een array zijn
+        }
+
+        loadChampions();
+    }, []);
+
+    // 🔥 FILTER PIPELINE (favorites + search + category)
+    const filteredChamps = champions
+        // 1. alleen favorieten
+        .filter((champ) => isFavorite(champ.name))
+
+        // 2. search filter
+        .filter((champ) =>
+            champ.name.toLowerCase().includes(search.toLowerCase())
+        )
+
+        // 3. categorie filter
+        .filter((champ) =>
+            selectedCategory === "All"
+                ? true
+                : champ.role === selectedCategory
+        );
 
     return (
         <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+
+            {/* PROFILE */}
             <View style={styles.profileCard}>
                 <Image
                     source={{uri: "https://i.imgur.com/4AiXzf8.jpeg"}}
@@ -29,29 +60,48 @@ export default function HomePage() {
                 />
             </View>
 
+            {/* SEARCH */}
             <TextInput
                 placeholder="Search champions..."
                 placeholderTextColor="#999"
                 style={styles.search}
+                value={search}
+                onChangeText={setSearch}
             />
 
+            {/* CATEGORY TABS */}
             <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.tabs}>
                 {categories.map((cat) => (
-                    <TouchableOpacity key={cat} style={styles.tab}>
-                        <Text style={styles.tabText}>{cat}</Text>
+                    <TouchableOpacity
+                        key={cat}
+                        style={[
+                            styles.tab,
+                            selectedCategory === cat && styles.tabActive
+                        ]}
+                        onPress={() => setSelectedCategory(cat)}
+                    >
+                        <Text
+                            style={[
+                                styles.tabText,
+                                selectedCategory === cat && styles.tabTextActive
+                            ]}
+                        >
+                            {cat}
+                        </Text>
                     </TouchableOpacity>
                 ))}
             </ScrollView>
 
             <Text style={styles.sectionTitle}>Favorite highlights</Text>
 
+            {/* FAVORIETE + GEFILTERDE CHAMPIONS */}
             <View style={styles.grid}>
-                {favoriteChamps.length === 0 ? (
+                {filteredChamps.length === 0 ? (
                     <Text style={styles.emptyState}>
-                        Favorite champs from Settings will show up here.
+                        No champions match your filters.
                     </Text>
                 ) : (
-                    favoriteChamps.map((champ) => (
+                    filteredChamps.map((champ) => (
                         <TouchableOpacity
                             key={champ.name}
                             style={styles.card}
@@ -104,9 +154,16 @@ const styles = StyleSheet.create({
         borderRadius: 999,
         marginRight: 10,
     },
+    tabActive: {
+        backgroundColor: "#3b82f6",
+    },
     tabText: {
         color: "#e2e8f0",
         fontWeight: "600",
+    },
+    tabTextActive: {
+        color: "#fff",
+        fontWeight: "700",
     },
     sectionTitle: {
         color: "#fff",
