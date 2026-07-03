@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Jinx",
+    "role": "Marksman",
+    "img": "https://i.imgur.com/8wYwZzj.png"
+  },
+  {
+    "id": 2,
+    "name": "Belveth",
+    "role": "Void",
+    "img": "https://i.imgur.com/2nCt3Sbl.png"
+  },
+  {
+    "id": 3,
+    "name": "Draven",
+    "role": "Marksman",
+    "img": "https://i.imgur.com/4AiXzf8.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Ashe",
+    "role": "Marksman",
+    "img": "https://i.imgur.com/0ZfQZQp.png"
+  }
+]
