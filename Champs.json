@@ -22,5 +22,11 @@
     "name": "Ashe",
     "role": "Marksman",
     "img": "https://i.imgur.com/0ZfQZQp.png"
+  },
+  {
+    "id": 5,
+    "name": "Mordekaiser",
+    "role": "Fighter",
+    "img": "https://i.imgur.com/0ZfQZQp.png"
   }
 ]
