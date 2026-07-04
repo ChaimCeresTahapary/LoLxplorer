@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text, Switch, ScrollView, Image, StyleSheet} from 'react-native';
 import {useTheme} from '../components/ThemeContext';
+import {useFavorites} from '../components/isfavorite';
 import championsData from '../Champs.json';
 
 export default function SettingsPage() {
-    const {isDarkMode, toggleDarkMode, isFavorite, toggleFavorite} = useTheme();
+    const {isDarkMode, toggleDarkMode} = useTheme();
+    const {isFavorite, toggleFavorite} = useFavorites();
 
     return (
         <ScrollView

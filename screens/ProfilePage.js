@@ -1,9 +1,11 @@
 import {View, Text, ScrollView, StyleSheet} from 'react-native';
 import {useEffect, useState} from 'react';
+import {useTheme} from '../components/ThemeContext';
 import {getData} from '../components/GetApi';
 
 export default function ProfilePage() {
     const [champions, setChampions] = useState([]);
+    const {isDarkMode} = useTheme();
 
     useEffect(() => {
         async function loadChampions() {
@@ -21,12 +23,12 @@ export default function ProfilePage() {
     }, []);
 
     return (
-        <ScrollView contentContainerStyle={styles.container}>
-            <Text style={styles.title}>Champions</Text>
+        <ScrollView contentContainerStyle={[styles.container, {backgroundColor: isDarkMode ? '#0f172a' : '#ffffff'}]} style={{flex: 1}}>
+            <Text style={[styles.title, {color: isDarkMode ? '#fff' : '#000'}]}>Champions</Text>
 
             {Array.isArray(champions) && champions.map((champ) => (
-                <View key={champ.name} style={styles.card}>
-                    <Text style={styles.name}>{champ.name}</Text>
+                <View key={champ.name} style={[styles.card, {backgroundColor: isDarkMode ? '#1e293b' : '#eee'}]}>
+                    <Text style={[styles.name, {color: isDarkMode ? '#fff' : '#000'}]}>{champ.name}</Text>
                 </View>
             ))}
         </ScrollView>
@@ -36,7 +38,9 @@ export default function ProfilePage() {
 const styles = StyleSheet.create({
     container: {
         padding: 20,
-        alignItems: 'center'
+        alignItems: 'center',
+        minHeight: '100%',
+        flexGrow: 1
     },
     title: {
         fontSize: 28,

@@ -10,11 +10,13 @@ import {
 } from "react-native";
 import {useNavigation} from "@react-navigation/native";
 import {useTheme} from "../components/ThemeContext";
-import {getData} from "../components/GetApi"; // jouw API
+import {useFavorites} from "../components/isfavorite";
+import {getData} from "../components/GetApi";
 
 export default function HomePage() {
     const navigation = useNavigation();
-    const {isFavorite} = useTheme();
+    const {isFavorite} = useFavorites();
+    const {isDarkMode} = useTheme();
 
     const [champions, setChampions] = useState([]);
     const [search, setSearch] = useState("");
@@ -50,7 +52,7 @@ export default function HomePage() {
         );
 
     return (
-        <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+        <ScrollView style={[styles.container, {backgroundColor: isDarkMode ? '#0f172a' : '#ffffff'}]} contentContainerStyle={styles.content}>
 
             {/* PROFILE */}
             <View style={styles.profileCard}>
@@ -64,7 +66,7 @@ export default function HomePage() {
             <TextInput
                 placeholder="Search champions..."
                 placeholderTextColor="#999"
-                style={styles.search}
+                style={[styles.search, {backgroundColor: isDarkMode ? '#1e293b' : '#e2e8f0', color: isDarkMode ? '#fff' : '#000'}]}
                 value={search}
                 onChangeText={setSearch}
             />
@@ -76,6 +78,7 @@ export default function HomePage() {
                         key={cat}
                         style={[
                             styles.tab,
+                            {backgroundColor: isDarkMode ? '#1e293b' : '#e2e8f0'},
                             selectedCategory === cat && styles.tabActive
                         ]}
                         onPress={() => setSelectedCategory(cat)}
@@ -83,6 +86,7 @@ export default function HomePage() {
                         <Text
                             style={[
                                 styles.tabText,
+                                {color: isDarkMode ? '#e2e8f0' : '#333'},
                                 selectedCategory === cat && styles.tabTextActive
                             ]}
                         >
@@ -92,24 +96,24 @@ export default function HomePage() {
                 ))}
             </ScrollView>
 
-            <Text style={styles.sectionTitle}>Favorite highlights</Text>
+            <Text style={[styles.sectionTitle, {color: isDarkMode ? '#fff' : '#000'}]}>Favorite highlights</Text>
 
             {/* FAVORIETE + GEFILTERDE CHAMPIONS */}
             <View style={styles.grid}>
                 {filteredChamps.length === 0 ? (
-                    <Text style={styles.emptyState}>
+                    <Text style={[styles.emptyState, {color: isDarkMode ? '#cbd5e1' : '#666'}]}>
                         No champions match your filters.
                     </Text>
                 ) : (
                     filteredChamps.map((champ) => (
                         <TouchableOpacity
                             key={champ.name}
-                            style={styles.card}
+                            style={[styles.card, {backgroundColor: isDarkMode ? '#1e293b' : '#f0f0f0'}]}
                             onPress={() => navigation.navigate("ProfilePage")}
                         >
                             <Image source={{uri: champ.img}} style={styles.cardImage}/>
-                            <Text style={styles.cardName}>{champ.name}</Text>
-                            <Text style={styles.cardRole}>{champ.role}</Text>
+                            <Text style={[styles.cardName, {color: isDarkMode ? '#fff' : '#000'}]}>{champ.name}</Text>
+                            <Text style={[styles.cardRole, {color: isDarkMode ? '#94a3b8' : '#666'}]}>{champ.role}</Text>
                         </TouchableOpacity>
                     ))
                 )}
