@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "name": "Jinx",
+    "name": "Jinx Arcane Enemy",
     "role": "Marksman",
-    "img": "https://i.imgur.com/8wYwZzj.png"
+    "img": "https://wiki.leagueoflegends.com/en-us/images/Jinx_ArcaneEnemySkin.jpg?da1e5"
   },
   {
     "id": 2,
-    "name": "Belveth",
-    "role": "Void",
-    "img": "https://i.imgur.com/2nCt3Sbl.png"
+    "name": "Ahri",
+    "role": "Mage",
+    "img": "https://wiki.leagueoflegends.com/en-us/images/Ahri_OriginalSkin.jpg?a73be"
   },
   {
     "id": 3,
@@ -19,14 +19,20 @@
   },
   {
     "id": 4,
-    "name": "Ashe",
-    "role": "Marksman",
-    "img": "https://i.imgur.com/0ZfQZQp.png"
+    "name": "Illaoi Snow Moon",
+    "role": "Fighter",
+    "img": "https://wiki.leagueoflegends.com/en-us/images/Illaoi_SnowMoonSkin.jpg?14533"
   },
   {
     "id": 5,
-    "name": "Mordekaiser",
+    "name": "Sahn-Uzal Mordekaiser",
     "role": "Fighter",
-    "img": "https://i.imgur.com/0ZfQZQp.png"
+    "img": "https://wiki.leagueoflegends.com/en-us/images/Mordekaiser_Sahn-UzalSkin.jpg?651dd"
+  },
+  {
+    "id": 6,
+    "name": "Nocturne",
+    "role": "Assassin",
+    "img": "https://wiki.leagueoflegends.com/en-us/images/Nocturne_OriginalSkin.jpg?a284d"
   }
 ]
