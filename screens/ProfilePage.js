@@ -23,7 +23,8 @@ export default function ProfilePage() {
     }, []);
 
     return (
-        <ScrollView contentContainerStyle={[styles.container, {backgroundColor: isDarkMode ? '#0f172a' : '#ffffff'}]} style={{flex: 1}}>
+        <ScrollView contentContainerStyle={[styles.container, {backgroundColor: isDarkMode ? '#0f172a' : '#ffffff'}]}
+                    style={{flex: 1}}>
             <Text style={[styles.title, {color: isDarkMode ? '#fff' : '#000'}]}>Champions</Text>
 
             {Array.isArray(champions) && champions.map((champ) => (
@@ -45,7 +46,8 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 28,
         fontWeight: 'bold',
-        marginBottom: 20
+        marginBottom: 20,
+        marginTop: 20
     },
     card: {
         width: '90%',

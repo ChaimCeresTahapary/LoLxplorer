@@ -21,14 +21,16 @@ export default function SettingsPage() {
             </Text>
 
             <Text style={[styles.description, {color: isDarkMode ? '#fff' : '#000'}]}>
-                Favorite champs here to make them appear as highlights on the homepage.
+                Hello Challenger, in the settings menu you can customise your screen mode Light Mode or Dark Mode,
+                here in settings you can also Favorite your champion so that it will be on the homescreen as a highlight
+                the list of champions are on the nav tabs "Champs" or on settings Favorite Champs.
             </Text>
 
             <View style={styles.row}>
                 <Text style={[styles.label, {color: isDarkMode ? '#fff' : '#000'}]}>
                     Dark Mode
                 </Text>
-                <Switch value={isDarkMode} onValueChange={toggleDarkMode} />
+                <Switch value={isDarkMode} onValueChange={toggleDarkMode}/>
             </View>
 
             <Text style={[styles.sectionTitle, {color: isDarkMode ? '#fff' : '#000'}]}>
@@ -43,7 +45,7 @@ export default function SettingsPage() {
                         {backgroundColor: isDarkMode ? '#1e1e1e' : '#ffffff'},
                     ]}
                 >
-                    <Image source={{uri: champ.img}} style={styles.champImage} />
+                    <Image source={{uri: champ.img}} style={styles.champImage}/>
                     <View style={styles.champInfo}>
                         <Text style={[styles.champName, {color: isDarkMode ? '#fff' : '#000'}]}>
                             {champ.name}
@@ -68,12 +70,13 @@ const styles = StyleSheet.create({
         padding: 20,
     },
     title: {
-        fontSize: 24,
+        fontSize: 35,
         fontWeight: 'bold',
         marginBottom: 10,
+        marginTop: 20,
     },
     description: {
-        fontSize: 12,
+        fontSize: 16,
         marginBottom: 20,
         lineHeight: 18,
     },
@@ -82,13 +85,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         marginBottom: 20,
+
     },
     label: {
-        fontSize: 18,
+        fontSize: 24,
         fontWeight: 'bold',
     },
     sectionTitle: {
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 12,
     },

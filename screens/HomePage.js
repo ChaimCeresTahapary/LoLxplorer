@@ -52,12 +52,13 @@ export default function HomePage() {
         );
 
     return (
-        <ScrollView style={[styles.container, {backgroundColor: isDarkMode ? '#0f172a' : '#ffffff'}]} contentContainerStyle={styles.content}>
+        <ScrollView style={[styles.container, {backgroundColor: isDarkMode ? '#0f172a' : '#ffffff'}]}
+                    contentContainerStyle={styles.content}>
 
             {/* PROFILE */}
             <View style={styles.profileCard}>
                 <Image
-                    source={{uri: "https://i.imgur.com/4AiXzf8.jpeg"}}
+                    source={{uri: "https://avatars.githubusercontent.com/u/182497999?v=4"}}
                     style={styles.profileImage}
                 />
             </View>
@@ -66,7 +67,10 @@ export default function HomePage() {
             <TextInput
                 placeholder="Search champions..."
                 placeholderTextColor="#999"
-                style={[styles.search, {backgroundColor: isDarkMode ? '#1e293b' : '#e2e8f0', color: isDarkMode ? '#fff' : '#000'}]}
+                style={[styles.search, {
+                    backgroundColor: isDarkMode ? '#1e293b' : '#e2e8f0',
+                    color: isDarkMode ? '#fff' : '#000'
+                }]}
                 value={search}
                 onChangeText={setSearch}
             />
@@ -113,7 +117,8 @@ export default function HomePage() {
                         >
                             <Image source={{uri: champ.img}} style={styles.cardImage}/>
                             <Text style={[styles.cardName, {color: isDarkMode ? '#fff' : '#000'}]}>{champ.name}</Text>
-                            <Text style={[styles.cardRole, {color: isDarkMode ? '#94a3b8' : '#666'}]}>{champ.role}</Text>
+                            <Text
+                                style={[styles.cardRole, {color: isDarkMode ? '#94a3b8' : '#666'}]}>{champ.role}</Text>
                         </TouchableOpacity>
                     ))
                 )}
@@ -134,6 +139,7 @@ const styles = StyleSheet.create({
     profileCard: {
         alignItems: "center",
         marginBottom: 20,
+        marginTop: 20
     },
     profileImage: {
         width: 90,
