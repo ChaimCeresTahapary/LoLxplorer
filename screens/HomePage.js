@@ -20,7 +20,7 @@ export default function HomePage() {
     const [search, setSearch] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("All");
 
-    const categories = ["All", "Assassins", "Mages", "Fighter", "Bruisers"];
+    const categories = ["All", "Assassin", "Mage", "Fighter", "Marksman"];
 
     // 🔥 API CALL — haalt champions online op
     useEffect(() => {
