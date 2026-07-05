@@ -10,15 +10,16 @@ export async function getData() {
 
         if (!response.ok) {
             console.log(`API ERROR: HTTP ${response.status}`);
-            return localChampions;
+            return localChampions; // fallback
         }
 
         const text = await response.text();
         const result = JSON.parse(text);
 
         return Array.isArray(result) ? result : localChampions;
+
     } catch (error) {
         console.log(`API ERROR: ${error.message}`);
-        return localChampions;
+        return localChampions; // fallback
     }
 }
