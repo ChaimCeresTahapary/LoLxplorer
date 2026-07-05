@@ -1,0 +1,74 @@
+[
+  {
+    "id": "blue-sentinel",
+    "name": "Blue Sentinel",
+    "location": "Top-side jungle, Capelle area",
+    "description": "Mana-focused buff camp that helps with cooldown feel, mana sustain, and faster spell uptime.",
+    "respawn": "2:15",
+    "buff": "Blue Buff",
+    "gold": "~80",
+    "image": "https://wiki.leagueoflegends.com/en-us/images/Blue_Sentinel_Render.png?05fd9",
+    "latitude": 51.936,
+    "longitude": 4.563
+  },
+  {
+    "id": "gromp",
+    "name": "Gromp",
+    "location": "River side, Capelle area",
+    "description": "Single-target camp with solid early sustain and clean gold for fast clears.",
+    "respawn": "2:15",
+    "buff": "No buff",
+    "gold": "~70",
+    "image": "https://wiki.leagueoflegends.com/en-us/images/Gromp_Render.png?e479e",
+    "latitude": 51.938,
+    "longitude": 4.575
+  },
+  {
+    "id": "murk-wolf-camp",
+    "name": "Murk Wolf camp",
+    "location": "Upper-mid jungle, Capelle area",
+    "description": "Three-monster camp that rewards AoE clears and gives steady early route gold.",
+    "respawn": "2:15",
+    "buff": "No buff",
+    "gold": "~65",
+    "image": "https://wiki.leagueoflegends.com/en-us/images/Greater_Murk_Wolf_Render.png?39018",
+    "latitude": 51.932,
+    "longitude": 4.589
+  },
+  {
+    "id": "raptor-camp",
+    "name": "Raptor camp",
+    "location": "Central jungle, Capelle area",
+    "description": "Fast-clear camp that punishes low AoE starts and helps keep your jungle tempo high.",
+    "respawn": "2:15",
+    "buff": "No buff",
+    "gold": "~85",
+    "image": "https://wiki.leagueoflegends.com/en-us/images/Crimson_Raptor_Render.png?6345a",
+    "latitude": 51.926,
+    "longitude": 4.6
+  },
+  {
+    "id": "red-brambleback",
+    "name": "Red Brambleback",
+    "location": "Bot-side jungle, Capelle area",
+    "description": "AD and chase-power buff camp that makes early duels and ganks stronger.",
+    "respawn": "2:15",
+    "buff": "Red Buff",
+    "gold": "~80",
+    "image": "https://wiki.leagueoflegends.com/en-us/images/Red_Brambleback_Render.png?87cd0",
+    "latitude": 51.919,
+    "longitude": 4.585
+  },
+  {
+    "id": "krug-camp",
+    "name": "Krug camp",
+    "location": "Bot-side edge, Capelle area",
+    "description": "Durable camp with the biggest standard gold payout and strong clear value.",
+    "respawn": "2:15",
+    "buff": "No buff",
+    "gold": "~125",
+    "image": "https://wiki.leagueoflegends.com/en-us/images/Ancient_Krug_Render.png?ea8dd",
+    "latitude": 51.915,
+    "longitude": 4.597
+  }
+]

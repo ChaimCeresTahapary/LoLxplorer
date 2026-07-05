@@ -1,15 +1,24 @@
-const url = process.env.EXPO_PUBLIC_BASE_URL;
+import localChampions from '../data/Champs.json';
 
 export async function getData() {
+    const url = process.env.EXPO_PUBLIC_BASE_URL;
+
+    console.log(`API URL: ${url}`);
+
     try {
         const response = await fetch(url);
-        const result = await response.json();
 
-        // JOUW JSON is een array → dus direct returnen
-        return result;
+        if (!response.ok) {
+            console.log(`API ERROR: HTTP ${response.status}`);
+            return localChampions;
+        }
 
+        const text = await response.text();
+        const result = JSON.parse(text);
+
+        return Array.isArray(result) ? result : localChampions;
     } catch (error) {
-        console.log("API ERROR:", error.message);
-        return []; // voorkomt crashes
+        console.log(`API ERROR: ${error.message}`);
+        return localChampions;
     }
 }

@@ -1,0 +1,32 @@
+{
+  "Jinx Arcane Enemy": {
+    "description": "A chaotic marksman with explosive energy and a love for turning fights into chaos.",
+    "lore": "An unstoppable outlaw who thrives on mayhem and pushes every battle to the limit.",
+    "wikiUrl": "https://wiki.leagueoflegends.com/en-us/Special:Search?search=Jinx+Arcane+Enemy"
+  },
+  "Ahri": {
+    "description": "A fox mage who charms targets and controls fights with quick bursts of magic.",
+    "lore": "A vastaya who walks the line between instinct, memory, and the hunt.",
+    "wikiUrl": "https://wiki.leagueoflegends.com/en-us/Special:Search?search=Ahri"
+  },
+  "Draven": {
+    "description": "A showman fighter who lives for attention, blades, and impossible confidence.",
+    "lore": "Noxus' greatest executioner, driven by fame and the roar of a crowd.",
+    "wikiUrl": "https://wiki.leagueoflegends.com/en-us/Special:Search?search=Draven"
+  },
+  "Illaoi Snow Moon": {
+    "description": "A brutal fighter who tests willpower and wins through crushing pressure.",
+    "lore": "A prophet of the Kraken Priestess, she believes only strength reveals truth.",
+    "wikiUrl": "https://wiki.leagueoflegends.com/en-us/Illaoi"
+  },
+  "Sahn-Uzal Mordekaiser": {
+    "description": "An armored warlord who dominates close fights and never backs down.",
+    "lore": "The first death became his rebirth, and now he bends the dead to his will.",
+    "wikiUrl": "https://wiki.leagueoflegends.com/en-us/Special:Search?search=Sahn-Uzal+Mordekaiser"
+  },
+  "Nocturne": {
+    "description": "A fear-driven assassin who strikes from darkness and disappears again.",
+    "lore": "A living nightmare that feeds on terror and stalks the edge of reality.",
+    "wikiUrl": "https://wiki.leagueoflegends.com/en-us/Special:Search?search=Nocturne"
+  }
+}
