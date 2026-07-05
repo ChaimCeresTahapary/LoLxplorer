@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
-import {Image, Linking, Pressable, StyleSheet, Text, View} from 'react-native';
+import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 
 export default function ChampionHighlightCard({champion, isDarkMode}) {
     const [showLore, setShowLore] = useState(false);
-
-    const openWiki = () => {
-        if (champion.wikiUrl) {
-            Linking.openURL(champion.wikiUrl);
-        }
-    };
 
     return (
         <View style={[styles.card, {backgroundColor: isDarkMode ? '#1e293b' : '#f0f0f0'}]}>
@@ -23,7 +17,7 @@ export default function ChampionHighlightCard({champion, isDarkMode}) {
                         </Text>
                     </View>
                 ) : (
-                    <Image source={{uri: champion.img}} style={styles.image} />
+                    <Image source={{uri: champion.img}} style={styles.image}/>
                 )}
             </Pressable>
 
@@ -39,9 +33,6 @@ export default function ChampionHighlightCard({champion, isDarkMode}) {
                     <Text style={[styles.hint, {color: isDarkMode ? '#cbd5e1' : '#475569'}]}>
                         {showLore ? 'Lore shown above' : 'Tap image to flip to lore'}
                     </Text>
-                    <Pressable onPress={openWiki} style={styles.profileLinkButton}>
-                        <Text style={styles.profileLink}>Open</Text>
-                    </Pressable>
                 </View>
             </View>
         </View>
@@ -92,13 +83,5 @@ const styles = StyleSheet.create({
     hint: {
         fontSize: 12,
         fontWeight: '600',
-    },
-    profileLink: {
-        color: '#3b82f6',
-        fontWeight: '700',
-    },
-    profileLinkButton: {
-        paddingVertical: 4,
-        paddingHorizontal: 2,
     },
 });

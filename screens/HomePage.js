@@ -6,6 +6,7 @@ import {getData} from '../components/GetApi';
 import ChampionHighlightCard from '../components/ChampionHighlightCard';
 import championLore from '../data/championLore.json';
 
+
 export default function HomePage() {
     const {isFavorite} = useFavorites();
     const {isDarkMode} = useTheme();
@@ -29,7 +30,6 @@ export default function HomePage() {
             const lore = championLore[champ.name] || {};
             return {
                 ...champ,
-                description: lore.description || 'Tap to see more about this champion.',
                 lore: lore.lore || '',
             };
         });
