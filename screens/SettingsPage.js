@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Switch, ScrollView, Image, StyleSheet} from 'react-native';
 import {useTheme} from '../components/ThemeContext';
 import {useFavorites} from '../components/isfavorite';
-import championsData from '../Champs.json';
+import championsData from '../data/Champs.json';
 
 export default function SettingsPage() {
     const {isDarkMode, toggleDarkMode} = useTheme();
